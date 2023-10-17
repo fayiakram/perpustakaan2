@@ -25,6 +25,20 @@ class BookController {
         }
     }
 
+    async deleteBook(req, res) {
+        try {
+            const book = await bookService.delete(req.params.id)
+            res.status(201).json({
+                data: book, message: "Berhasil menghapus buku"
+            })
+        } catch (error) {
+            console.log(error);
+            res.status(500).json({ error: "Gagal menghapus buku." });
+        }
+    }
+
+
+
 }
 
 module.exports = BookController;
