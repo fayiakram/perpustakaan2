@@ -19,9 +19,7 @@ class BookController {
         try {
             const data =
                 await bookService.getBook(null);
-            res.render("index", {
-                book: bookData,
-            });
+
             res.status(200).json({ message: "Buku diambil", data });
         } catch (error) {
             console.error(error);

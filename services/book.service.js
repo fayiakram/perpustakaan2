@@ -39,10 +39,9 @@ class BooksService {
         });
         return deleteBook;
     }
-    async update(payload) {
+    async update(id, payload) {
         try {
             const {
-                id,
                 title,
                 author,
                 publish_year,
