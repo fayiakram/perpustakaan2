@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kelas</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/bootstrap/js/bootstrap.min.js" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="main-content" id="main-content">
+        <div class="container">
+            <!-- Konten utama berada di sini -->
+            <h1>List Books</h1>
+
+            <a href="/books/add" class="btn btn-success mb-2" style="margin-top: 20px; margin-bottom: 20px" ;>Add</a>
+
+            <div class="table-responsive" style="margin-top: 20px;">
+                <table class="table">
+                    <caption>
+                        List Books
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Tahun Terbit</th>
+                            <th scope="col">Genre</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% kelas.forEach((data,index)=> { %>
+                            <tr>
+                                <th scope="row">
+                                    <%= index + 1 %>
+                                </th>
+                                <td>
+                                    <%= data.title %>
+                                </td>
+                                <td>
+                                    <%= data.author %>
+                                </td>
+                                <td>
+                                    <%= data.publish_year %>
+                                </td>
+                                <td>
+                                    <%= data.description %>
+                                </td>
+
+
+                                <td>
+                                    <a href="/kelas/edit/<%= data.id %>" class="btn btn-info btn-sm">Edit</a>
+                                    <button id="<%= data.id %>"
+                                        class="btn btn-danger btn-sm delete-kelas">Hapus</button>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>
+<thead>
+    <tr>
+        <th scope="col">No</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Tahun Terbit</th>
+        <th scope="col">Genre</th>
+    </tr>
+</thead>
+
+<tbody>
+    <% kelas.forEach((data,index)=> { %>
+        <tr>
+            <th scope="row">
+                <%= index + 1 %>
+            </th>
+            <td>
+                <%= data.title %>
+            </td>
+            <td>
+                <%= data.author %>
+            </td>
+            <td>
+                <%= data.publish_year %>
+            </td>
+            <td>
+                <%= data.description %>
+            </td>
+
+
+            <td>
+                <a href="/kelas/edit/<%= data.id %>" class="btn btn-info btn-sm">Edit</a>
+                <button id="<%= data.id %>" class="btn btn-danger btn-sm delete-kelas">Hapus</button>
+            </td>
+        </tr>
+        <% }); %>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+</body>
+
+</html>
